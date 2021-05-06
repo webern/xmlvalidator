@@ -1,0 +1,29 @@
+From 8233590e2ce680131ecca432ffc9f6ea71aa982f Mon Sep 17 00:00:00 2001
+From: Matthew James Briggs <matthew.james.briggs@gmail.com>
+Date: Wed, 5 May 2021 19:49:36 -0700
+Subject: [PATCH] use local schema location
+
+The network schema locations are not what we want, instead we want to
+locate these schemas on disk.
+---
+ schema/musicxml.xsd | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/schema/musicxml.xsd b/schema/musicxml.xsd
+index c46ae97..af6d27a 100755
+--- a/schema/musicxml.xsd
++++ b/schema/musicxml.xsd
+@@ -23,8 +23,8 @@ The XML catalog at catalog.xml supports validating against a local copy of this
+ 	<xs:annotation>
+ 		<xs:documentation>The MusicXML 4.0 DTD has no namespace, so for compatibility the MusicXML 4.0 XSD has no namespace either. Those who need to import the MusicXML XSD into another schema are advised to create a new version that uses "http://www.musicxml.org/xsd/MusicXML" as the namespace.</xs:documentation>
+ 	</xs:annotation>
+-	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.musicxml.org/xsd/xml.xsd"/>
+-	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.musicxml.org/xsd/xlink.xsd"/>
++	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="./xml.xsd"/>
++	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="./xlink.xsd"/>
+ 
+ 	<!-- Simple types derived from common.mod entities and elements -->
+ 
+-- 
+2.24.3 (Apple Git-128)
+
