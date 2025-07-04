@@ -16,7 +16,13 @@ docker run --rm \
         /files/file.xml 
 ```
 
+## Building and Testing
+
+Run `./test/test.sh` to build the container and run the tests.
+If you inspect that script, you can see the build command.
+The script will build the image and give it the tag `ghcr.io/webern/xmlvalidator:testing`.
+
 ## License
 
 This git repository is MIT.
-Licenses for all of the software in the Docker image are in the image itself.
+Licenses for all the software in the Docker image are in the image itself.
